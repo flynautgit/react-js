@@ -1,5 +1,4 @@
 import NotAuthenticatedLayout from "../components/layouts/NotAuthenticatedLayout";
-import ModalBox from "../components/modal";
 
 const Home = ()=>{
 
