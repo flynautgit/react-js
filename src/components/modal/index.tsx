@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Style from "./index.module.css";
 
 type prop={
     header:string,
@@ -40,22 +41,22 @@ const ModalBox = ({header,message,onOk,open,onClose,onCancel}:prop)=>{
         <>
         {
             active &&
-            <div className="modalBox" onClick={closeHandler}>
-            <div className="modalInner" onClick={(e)=> e.stopPropagation() }>
+            <div className={Style.modalBox} onClick={closeHandler}>
+            <div className={Style.modalInner} onClick={(e)=> e.stopPropagation() }>
                 <div 
-                className={`modalHeader `}
+                className={Style.modalHeader}
                 >
                     <p>{header}</p>
             
                 </div>
-                <div className="modalContent">
+                <div className={Style.modalContent}>
                     {message}
                 </div>
-                <div className="modalBtnCnt">
+                <div className={Style.modalBtnCnt}>
                     {
                         onCancel &&
                         <button 
-                        className={`modalBtn`} 
+                        className={Style.modalBtn} 
                         onClick={cancelHandler}>
                             Cancel
                         </button>
@@ -63,7 +64,7 @@ const ModalBox = ({header,message,onOk,open,onClose,onCancel}:prop)=>{
                     {
                         onOk &&
                         <button 
-                        className={`modalBtn`} 
+                        className={Style.modalBtn} 
                         onClick={okHandler}>
                             OK
                         </button>
